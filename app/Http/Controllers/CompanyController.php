@@ -39,7 +39,7 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|min:6',
+            'name' => 'required|min:3',
             'email' => 'email|unique:companies,email',
             'logo' => 'mimes:jpg,jpeg,png|max:2048',
         ]);

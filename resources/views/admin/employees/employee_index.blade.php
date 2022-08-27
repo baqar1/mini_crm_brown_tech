@@ -1,5 +1,5 @@
 @extends('admin.master_layout')
-@section('page_title', 'All Companies')
+@section('page_title', 'All Employees')
 @section('content')
 <!-- Main content -->
 @if (session()->has('message'))    
@@ -11,7 +11,7 @@
 <section class="content">
       <div class="container-fluid">
         <div class="row">
-            <a href="{{route('company.create')}}" class="btn btn-success mb-2 ml-2">Add</a>
+            <a href="{{route('employee.create')}}" class="btn btn-success mb-2 ml-2">Add</a>
 
             <div class="col-md-12">
             <div class="card">
@@ -20,13 +20,15 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table id="company" class="table table-striped">
+                <table id="employee" class="table table-striped">
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Logo</th>
-                      <th>Name</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
                       <th>Email</th>
+                      <th>Phone</th>
+                      <th>Company Name</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -35,16 +37,14 @@
                     @foreach($records as $record)
                         <tr>
                         <td>{{$no++}}</td>
-                        @if($record->logo)
-                            <td class="avatar avatar-xl"><img src="{{asset('storage/company').'/'.$record->logo}}" alt="avatar"></td>
-                        @else
-                            <td class="avatar avatar-xl"><img src="{{asset('storage/company/90x90.jpg')}}" alt=""></td>
-                        @endif
-                        <td>{{$record->name}}</td>
+                        <td>{{$record->first_name}}</td>
+                        <td>{{$record->last_name}}</td>
                         <td>{{$record->email}}</td>
+                        <td>{{$record->phone}}</td>
+                        <td>{{$record->companies->name}}</td>
                         <td>
-                            <a href="{{route('company.edit',[$record->id])}}"><i class="fas fa-edit"></i></a>
-                            <form style="display: inline;" action="{{route('company.destroy',[$record->id])}}" method="post">
+                            <a href="{{route('employee.edit',[$record->id])}}"><i class="fas fa-edit"></i></a>
+                            <form style="display: inline;" action="{{route('employee.destroy',[$record->id])}}" method="post">
                                     @csrf
                                     @method('DELETE')
                                 <button type="submit"  onclick="return confirm('Are you sure to delete this user?')"><i class="fas fa-trash"></i></button>
@@ -69,7 +69,7 @@
 @section('scripts')
 <script>
     $(document).ready( function () {
-    $('#company').DataTable();
+    $('#employee').DataTable();
 } );
 </script>
 @endsection
