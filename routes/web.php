@@ -23,5 +23,18 @@ Route::get('/master', function () {
 });
 
 Auth::routes();
-
+//redirect to dashboard after login
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::group(['middleware' => 'auth'], function()
+{
+    //company routes
+    Route::resource('company', 'App\Http\Controllers\CompanyController');
+    //employee routes
+    Route::resource('employee', 'App\Http\Controllers\EmployeeController');
+});
+
+
+
+

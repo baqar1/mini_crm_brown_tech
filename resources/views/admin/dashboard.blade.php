@@ -1,4 +1,5 @@
 @extends('admin.master_layout')
+@section('page_title', 'Dashboard')
 @section('content')
 <section class="content">
       <div class="container-fluid">
