@@ -29,6 +29,9 @@ class WelcomeMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('admin.email.welcome_email')->subject('Login Notification')->with('mailInfo', $this->mailInfo);
+        return $this->view('admin.email.welcome_email')
+        ->subject('Login Notification')
+        ->from('baqar.buttcit@gmail.com')
+        ->with('mailInfo', $this->mailInfo);
     }
 }
