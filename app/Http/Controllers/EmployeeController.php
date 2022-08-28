@@ -14,7 +14,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $records = Employee::with('companies')->paginate(10);
+        $records = Employee::with('companies')->paginate(config('app.pageSize'));
         return view('admin.employees.employee_index',compact('records'));
     }
 

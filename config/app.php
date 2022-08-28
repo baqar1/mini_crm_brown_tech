@@ -233,5 +233,6 @@ return [
         'Image' => Intervention\Image\Facades\Image::class
 
     ],
+    'pageSize' => 10,
 
 ];

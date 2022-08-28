@@ -18,7 +18,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $records = Company::paginate(10);
+        $records = Company::paginate(config('app.pageSize'));
         return view('admin.companies.company_index',compact('records'));
     }
 
