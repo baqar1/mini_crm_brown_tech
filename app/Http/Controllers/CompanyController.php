@@ -66,9 +66,10 @@ class CompanyController extends Controller
         $company->logo = $fileName;
         $email = $company->save();
         //send email when new company register
-        if($email){
-            Mail::to($company->email)->send(new WelcomeMail($company));
-        }
+        //because i dont need test email account server
+        // if($email){
+        //     Mail::to($company->email)->send(new WelcomeMail($company));
+        // }
         return redirect()->route('company.index')->with('message','Record Created Successfully');
     }
 
