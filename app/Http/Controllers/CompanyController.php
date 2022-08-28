@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WelcomeMail;
 use App\Models\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image as Image;
 
@@ -62,7 +64,11 @@ class CompanyController extends Controller
         $company->name = $request->name;
         $company->email = $request->email;
         $company->logo = $fileName;
-        $company->save();
+        $email = $company->save();
+        //send email when new company register
+        if($email){
+            Mail::to($company->email)->send(new WelcomeMail($company));
+        }
         return redirect()->route('company.index')->with('message','Record Created Successfully');
     }
 
