@@ -45,19 +45,19 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">{{__('admin.home')}}</a>
       </li>
       
       <li class="dropdown dropdown-language  d-none d-lg-block">
             <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="flag-icon flag-icon-us"></i><span>Language</span>
+                <i class="flag-icon flag-icon-us"></i><span>{{__('admin.language')}}</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdown-flag" x-placement="top-start" style="position: absolute; will-change: transform; top: 54px; left: 18px; transform: translate3d(-6px, -29px, 0px);">
                 <a class="dropdown-item" href="{{route('langChange','en')}}" data-language="en">
-                <i class="flag-icon flag-icon-us mr-50"></i> English
+                <i class="flag-icon flag-icon-us mr-50"></i> {{__('admin.english')}}
                 </a>
                 <a class="dropdown-item" href="{{route('langChange','ar')}}" data-language="fr">
-                <i class="flag-icon flag-icon-qa mr-50"></i> Arabic                          </a>
+                <i class="flag-icon flag-icon-qa mr-50"></i> {{__('admin.arabic')}}                          </a>
             </div>
         </li>
 
@@ -119,7 +119,7 @@
             <a href="{{route('home')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+              {{__('admin.dashboard')}}
               </p>
             </a>
             
@@ -129,7 +129,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Companies
+              {{__('admin.companies')}}
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -137,13 +137,13 @@
               <li class="nav-item">
                 <a href="{{route('company.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>All Compines</p>
+                  <p>{{__('admin.all_companies')}}</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('company.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add New Company</p>
+                  <p>{{__('admin.add_company')}}</p>
                 </a>
               </li>
             </ul>
@@ -152,7 +152,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Employees
+              {{__('admin.employees')}}
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -160,13 +160,13 @@
               <li class="nav-item">
                 <a href="{{route('employee.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>All Employees</p>
+                  <p>{{__('admin.all_employees')}}</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('employee.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add New Employee</p>
+                  <p>{{__('admin.add_employee')}}</p>
                 </a>
               </li>
             </ul>
@@ -176,7 +176,7 @@
                                                      document.getElementById('logout-form').submit();" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Logout
+              {{__('admin.logout')}}
                 
               </p>
             </a>

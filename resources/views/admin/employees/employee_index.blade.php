@@ -1,5 +1,5 @@
 @extends('admin.master_layout')
-@section('page_title', 'All Employees')
+@section('page_title', __('admin.all_employees'))
 @section('content')
 <!-- Main content -->
 @if (session()->has('message'))    
@@ -11,12 +11,12 @@
 <section class="content">
       <div class="container-fluid">
         <div class="row">
-            <a href="{{route('employee.create')}}" class="btn btn-success mb-2 ml-2">Add</a>
+            <a href="{{route('employee.create')}}" class="btn btn-success mb-2 ml-2">{{__('admin.add')}}</a>
 
             <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">List of All Companies</h3>
+                <h3 class="card-title">{{__('admin.list_all_employees')}}</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
@@ -24,12 +24,12 @@
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Email</th>
-                      <th>Phone</th>
-                      <th>Company Name</th>
-                      <th>Action</th>
+                      <th>{{__('admin.first_name')}}</th>
+                      <th>{{__('admin.last_name')}}</th>
+                      <th>{{__('admin.email')}}</th>
+                      <th>{{__('admin.phone')}}</th>
+                      <th>{{__('admin.company_name')}}</th>
+                      <th>{{__('admin.action')}}</th>
                     </tr>
                   </thead>
                   <tbody>

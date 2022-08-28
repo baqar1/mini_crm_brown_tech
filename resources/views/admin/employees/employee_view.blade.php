@@ -1,5 +1,5 @@
 @extends('admin.master_layout')
-@section('page_title', 'Add New Employee')
+@section('page_title', __('admin.add_employee'))
 @section('content')
 @php
 $companies = App\Models\Company::all();
@@ -13,7 +13,7 @@ $companies = App\Models\Company::all();
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add New employee</h3>
+                <h3 class="card-title">{{__('admin.add_employee')}}</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -24,21 +24,21 @@ $companies = App\Models\Company::all();
                 @endif
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="name">First Name</label>
+                    <label for="name">{{__('admin.first_name')}}</label>
                     <input type="text" name="first_name" value="{{$employee->first_name?? old('first_name')}}" class="form-control">
                     @if ($errors->has('first_name'))
                         <small class="text-danger">{{$errors->first('first_name')}}</small>
                     @endif
                   </div>
                   <div class="form-group">
-                    <label for="last_name">Last Name</label>
+                    <label for="last_name">{{__('admin.last_name')}}</label>
                     <input type="text" name="last_name" value="{{$employee->last_name?? old('last_name')}}" class="form-control">
                     @if ($errors->has('last_name'))
                         <small class="text-danger">{{$errors->first('last_name')}}</small>
                     @endif
                   </div>
                   <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">{{__('admin.email')}}</label>
                     <input type="email" name="email" value="{{$employee->email?? old('email')}}" class="form-control">
                     @if ($errors->has('email'))
                         <small class="text-danger">{{$errors->first('email')}}</small>
@@ -46,14 +46,14 @@ $companies = App\Models\Company::all();
                   </div>
                   
                   <div class="form-group">
-                    <label for="phone">Phone</label>
+                    <label for="phone">{{__('admin.phone')}}</label>
                     <input type="text" name="phone" value="{{$employee->phone?? old('phone')}}" class="form-control">
                     @if ($errors->has('phone'))
                         <small class="text-danger">{{$errors->first('phone')}}</small>
                     @endif
                   </div>
                   <div class="form-group">
-                    <label for="company_id">Companies</label>
+                    <label for="company_id">{{__('admin.companies')}}</label>
                     <select class="form-control" name="company_id">
                       <option value="">Select</option>
                       @foreach($companies as $company)
@@ -68,7 +68,7 @@ $companies = App\Models\Company::all();
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">{{__('admin.submit')}}</button>
                 </div>
               </form>
             </div>

@@ -1,5 +1,5 @@
 @extends('admin.master_layout')
-@section('page_title', 'Add New Company')
+@section('page_title', __('admin.add_company'))
 @section('content')
 <!-- Main content -->
 <section class="content">
@@ -10,7 +10,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add New Company</h3>
+                <h3 class="card-title">{{__('admin.add_company')}}</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -21,28 +21,28 @@
                 @endif
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">{{__('admin.name')}}</label>
                     <input type="text" name="name" value="{{$company->name?? old('name')}}" class="form-control">
                     @if ($errors->has('name'))
                         <small class="text-danger">{{$errors->first('name')}}</small>
                     @endif
                   </div>
                   <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">{{__('admin.email')}}</label>
                     <input type="email" name="email" value="{{$company->email?? old('email')}}" class="form-control">
                     @if ($errors->has('email'))
                         <small class="text-danger">{{$errors->first('email')}}</small>
                     @endif
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
+                    <label for="exampleInputFile">{{__('admin.logo')}}</label>
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" name="logo" class="custom-file-input">
                         @if ($errors->has('logo'))
                             <small class="text-danger">{{$errors->first('logo')}}</small>
                         @endif
-                        <label class="custom-file-label" for="logo">Choose file</label>
+                        <label class="custom-file-label" for="logo"> {{__('admin.choose_file')}}</label>
                       </div>
                       
                     </div>
@@ -61,7 +61,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary"> {{__('admin.submit')}}</button>
                 </div>
               </form>
             </div>
