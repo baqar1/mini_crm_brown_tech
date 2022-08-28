@@ -25,6 +25,8 @@ Route::get('/master', function () {
 Auth::routes();
 //redirect to dashboard after login
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//change language
+Route::get('lang-change/{language}', [App\Http\Controllers\HomeController::class, 'change'])->name('langChange');
 
 
 Route::group(['middleware' => 'auth'], function()

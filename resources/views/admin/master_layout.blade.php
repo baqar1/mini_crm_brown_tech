@@ -45,13 +45,35 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
-    </ul>
+      
+      <li class="dropdown dropdown-language  d-none d-lg-block">
+            <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="flag-icon flag-icon-us"></i><span>Language</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-flag" x-placement="top-start" style="position: absolute; will-change: transform; top: 54px; left: 18px; transform: translate3d(-6px, -29px, 0px);">
+                <a class="dropdown-item" href="{{route('langChange','en')}}" data-language="en">
+                <i class="flag-icon flag-icon-us mr-50"></i> English
+                </a>
+                <a class="dropdown-item" href="{{route('langChange','ar')}}" data-language="fr">
+                <i class="flag-icon flag-icon-qa mr-50"></i> Arabic                          </a>
+            </div>
+        </li>
 
+
+
+
+
+
+
+
+
+
+
+
+
+    </ul>
    
   </nav>
   <!-- /.navbar -->
